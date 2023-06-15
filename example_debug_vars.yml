@@ -1,0 +1,12 @@
+---
+- name: Playbook for check variables
+  hosts: deb11test
+  gather_facts: 'yes'
+  become: 'yes'
+  tasks:
+  - name: Print variables
+    debug:
+       msg: 
+         - '{{ ansible_hostname }}'
+         - '{{ ansible_fqdn }}'
+         - '{{ inventory_hostname }}'

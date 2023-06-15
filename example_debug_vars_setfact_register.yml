@@ -1,0 +1,50 @@
+---
+- name: Playbook for variables lesson
+  hosts: linux_test
+  become: 'yes'
+
+  vars:
+   message1: Hello
+   message2: World
+   secret: asdqweasd
+
+  tasks:
+  - name: Print secret variable
+    debug:
+      var: secret
+
+  - debug:
+      msg: "Sekrets: {{ secret }}"
+
+  tasks:
+  - debug:
+      msg: "Servers owner - {{ owner }}"
+
+  - debug:
+      msg: "IP address - {{ ansible_host }}"
+
+  tasks:
+  - set_fact: full_message="{{ message1 }} {{ message2 }} from {{ owner }}"
+
+  - debug:
+      var: full_message
+
+  tasks:
+  - set_fact: nodelist={%for host in groups['linux_test']%}{{hostvars[host].ansible_default_ipv4.address}}{% if not loop.last %},{% endif %}{% endfor %}
+
+  - debug:
+      var: nodelist
+
+  tasks:
+  - debug:
+      var: ansible_distribution
+
+  tasks:
+  - shell: uptime
+    register: results_shell
+
+  - debug:
+      var: results_shell
+
+  - debug:
+      var: results_shell.stdout
