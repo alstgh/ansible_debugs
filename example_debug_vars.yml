@@ -10,3 +10,4 @@
          - '{{ ansible_hostname }}'
          - '{{ ansible_fqdn }}'
          - '{{ inventory_hostname }}'
+### debugs - chek var
