@@ -13,4 +13,3 @@
          - '{{ ansible_vars1 }}'
          - '{{ ansible_vars2 }}'
          - '{{ ansible_vars3 }}'
-### debugs - chek var
