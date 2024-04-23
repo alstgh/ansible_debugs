@@ -13,9 +13,4 @@
          - '{{ ansible_vars1 }}'
          - '{{ ansible_vars2 }}'
          - '{{ ansible_vars3 }}'
-<<<<<<< HEAD
 ### debugs - chek var
-### debugs - chek var
-### debugs - chek var
-=======
->>>>>>> e9d594dcc12dc5ffa5c36ab5bf535a1497d5df3a
