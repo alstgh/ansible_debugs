@@ -65,5 +65,54 @@
 
   - debug:
       var: results_shell.stdout
+################################
 
+
+        tasks:
+  - debug:
+      var: ansible_distribution
+
+  tasks:
+  - shell: uptime
+    register: results_shell
+
+  - debug:
+      var: results_shell
+
+  - debug:
+      var: results_shell.stdout
+
+      ################################
+
+
+        tasks:
+  - debug:
+      var: ansible_distribution
+
+  tasks:
+  - shell: uptime
+    register: results_shell
+
+  - debug:
+      var: results_shell
+
+  - debug:
+      var: results_shell.stdout
+
+      ################################
+
+
+        tasks:
+  - debug:
+      var: ansible_distribution
+
+  tasks:
+  - shell: uptime
+    register: results_shell
+
+  - debug:
+      var: results_shell
+
+  - debug:
+      var: results_shell.stdout
 
